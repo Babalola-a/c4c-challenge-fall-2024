@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import InputOne from './fields/inputOne/inputOne'; // Corrected import path
+import InputOne from './fields/inputOne/inputOne'; // Ensure correct import path
 
 const PartnerTile = ({ onSubmit }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
   const [isActive, setIsActive] = useState(false);
+  const [pictureUrl, setPictureUrl] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,12 +15,15 @@ const PartnerTile = ({ onSubmit }) => {
       email,
       description,
       isActive,
+      pictureUrl,
     };
+    console.log("Submitting partner data:", partnerData); // Debug log
     onSubmit(partnerData);
     setName('');
     setEmail('');
     setDescription('');
     setIsActive(false);
+    setPictureUrl('');
   };
 
   return (
@@ -30,6 +34,7 @@ const PartnerTile = ({ onSubmit }) => {
         <InputOne heading="Name" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
         <InputOne heading="Email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <InputOne heading="Description" placeholder="Enter your description" value={description} onChange={(e) => setDescription(e.target.value)} />
+        <InputOne heading="Picture URL" placeholder="Enter picture URL" value={pictureUrl} onChange={(e) => setPictureUrl(e.target.value)} />
         <div className="input-field">
           <label>
             <h3>Active</h3>
