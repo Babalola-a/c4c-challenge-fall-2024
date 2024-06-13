@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PartnerTile from './PartnerTile'; // Ensure correct import
 
-/*
-  The top-level component containing everything relevant to the dashboard,
-  including information on each partner
-*/
 function Dashboard() {
   const [partners, setPartners] = useState([]);
 
@@ -13,13 +9,17 @@ function Dashboard() {
     fetch('http://localhost:4000', {
       method: 'GET',
     })
-    .then((res) => res.json())
-    .then(data => setPartners(data))
-    .catch(err => console.error(err));
+      .then((res) => res.json())
+      .then(data => setPartners(data))
+      .catch(err => console.error(err));
   }, []);
 
   const handleAddPartner = (partnerData) => {
     setPartners((prevPartners) => [...prevPartners, partnerData]);
+  };
+
+  const handleDeletePartner = (index) => {
+    setPartners((prevPartners) => prevPartners.filter((_, i) => i !== index));
   };
 
   return (
@@ -31,11 +31,12 @@ function Dashboard() {
             <div>No partners</div>
           ) : (
             partners.map((partner, index) => (
-              <div key={index} className="partner-info">
+              <div key={index} className="partner-info" style={{ border: partner.isActive ? '2px solid green' : '2px solid red', padding: '10px', marginBottom: '10px' }}>
                 <h3>{partner.name}</h3>
                 <p>Email: {partner.email}</p>
                 <p>Description: {partner.description}</p>
                 <p>Active: {partner.isActive ? 'Yes' : 'No'}</p>
+                <button onClick={() => handleDeletePartner(index)}>Delete</button>
               </div>
             ))
           )}
