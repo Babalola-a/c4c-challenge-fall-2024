@@ -34,12 +34,17 @@ I used the useState hook and useEffect hook within react. The UseState hook was 
 I also added form validation to make sure that all fields are filled in before submitting, it will not allwo you to submit unless all fields are filled. 
 
 ### Reflection
+
 **What I learned from this project**
-This project took me a lot of time since I had to do a decent amount of research before even starting in order to get a better grasp of react since I never really used react that much before. This project gave me an opportunity to experiment with more complex react implementation adn learn more about routing as well. I recently took databse design so this proejct gave me an opportunity to apply what I had learned to a personal project that I was interested in.
+This project took me a lot of time since I had to do a decent amount of research before even starting in order to get a better grasp of react since I never really used react that much before. This project gave me an opportunity to experiment with more complex react implementation adn learn more about routing as well. I recently took databse design so this project gave me an opportunity to apply what I had learned to a personal project that I was interested in.
+
 **What would I have done differently if you had more time?**
 - Add input validation into the form making sure that users are putting in valid email addresses and url addresses. 
 - Add more deisgn to the website as of right now this is a very basic user interface adn as someone interested in design there are plenty of ways to make this look better 
-- Possibly add a databse in order to have effective storage of data if this was to hold more partners **Did you run into issues during this project? If so, how did solve or work around them?**
+- Possibly add a databse in order to have effective storage of data if this was to hold more partners 
+
+**Did you run into issues during this project? If so, how did solve or work around them?**
 In the beginning I kept receiving CORS errors which was very infuriating since this is relatively fresh to me I didn't necessarily know how to approach the problem. I had to watch a lot of youtube videos and research in order to understand what these errors were in order to approach them correctly. I also made sure to take a lot of breaks from my code because I find that when I stare for a problem for too long I become frustrated. By taking a break and coming back to my code I was able to find out the issues and also using my resources effectively. 
+
 **If you implemented any bonus features, what made you choose them?**
 The only bonus feature that I chose to implement was editing the partner information once submitted. I decided to implement this feature because during my database design dialogue last semester I implemented something similar within my project so I thought it would be interesting to implement the same feature but instead in react in order to further my experience in different languages. 
