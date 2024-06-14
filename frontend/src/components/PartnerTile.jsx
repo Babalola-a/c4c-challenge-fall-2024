@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import InputOne from './fields/inputOne/inputOne'; // Ensure correct import path
+import InputOne from './fields/inputOne/inputOne'; 
 
 const PartnerTile = ({ onSubmit }) => {
   const [name, setName] = useState('');
@@ -12,7 +12,7 @@ const PartnerTile = ({ onSubmit }) => {
   useEffect(() => {
     validateForm();
   }, [name, email, description, pictureUrl]);
-
+  //checks that all required fields are filled out and sets isformvalid to the result
   const validateForm = () => {
     const isValid = name !== '' && email !== '' && description !== '' && pictureUrl !== '';
     setIsFormValid(isValid);
@@ -44,10 +44,10 @@ const PartnerTile = ({ onSubmit }) => {
       <span className="header-text">Add in partner info down below! Once information is added, green indicates active while red indicates inactive</span>
       <hr />
       <form onSubmit={handleSubmit}>
-        <InputOne heading="Name" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
-        <InputOne heading="Email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <InputOne heading="Description" placeholder="Enter your description" value={description} onChange={(e) => setDescription(e.target.value)} />
-        <InputOne heading="Picture URL" placeholder="Enter picture URL" value={pictureUrl} onChange={(e) => setPictureUrl(e.target.value)} />
+        <InputOne heading="Partner name" placeholder="Enter partner name" value={name} onChange={(e) => setName(e.target.value)} />
+        <InputOne heading="Partner email" placeholder="Enter partner email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <InputOne heading="Partner description" placeholder="Enter partner description" value={description} onChange={(e) => setDescription(e.target.value)} />
+        <InputOne heading="Logo URL" placeholder="Enter partner logo URL" value={pictureUrl} onChange={(e) => setPictureUrl(e.target.value)} />
         <div className="input-field checkbox-field">
           <label>
             <h3>Active</h3>
