@@ -12,7 +12,14 @@ function Dashboard() {
       method: 'GET',
     })
       .then((res) => res.json())
-      .then(data => setPartners(data))
+      .then(data => {
+        if (Array.isArray(data)) {
+          setPartners(data);
+        } else {
+          console.error('Expected an array but received:', data);
+          setPartners([]);
+        }
+      })
       .catch(err => console.error(err));
   }, []);
 
@@ -47,12 +54,12 @@ function Dashboard() {
   };
 
   return (
-    <div id="main-content">
+    <div id="main-content" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px' }}>
       <div id="main-partners-grid">
         <PartnerTile onSubmit={handleAddPartner} />
         <div className="partners-list" style={{ marginTop: '20px' }}>
           {partners.length === 0 ? (
-            <div>No partners</div>
+            <div></div>
           ) : (
             partners.map((partner, index) => (
               <div key={index} className="partner-info" style={{ border: partner.isActive ? '2px solid green' : '2px solid red', padding: '10px', marginBottom: '10px' }}>
@@ -112,6 +119,7 @@ function Dashboard() {
           )}
         </div>
       </div>
+      {partners.length === 0 && <div style={{ textAlign: 'center', marginTop: '20px' }}>No partners to currently display</div>}
     </div>
   );
 }
