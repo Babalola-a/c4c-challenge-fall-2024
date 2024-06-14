@@ -1,22 +1,42 @@
-This is the starter code for Code4Community's technical challenge for Fall 2024. 
-For more detailed information about each of the parts of this starter code, check out the [`INFO.md`](INFO.md) file
+### Instructions for Starting the Application
 
-## Prerequisites
+1. **Installation Requirements**:
+   - Make sure you have Node.js and npm installed.
+   - Clone this repository.
+   - Find the project within your terminal
+   - Run the following command to make sure everything is downloaded to run 
+     npm install
 
-If you don't have them already, you'll need to install Node.js/NPM and Git:
-- Node.js + NPM - install [here](https://nodejs.org/en/download/package-manager) (we highly recommend using at least Node 18.0.0 + NPM 8.6.0)
-   - You can choose to install via the command line under "Package Manager", or download an installer under "Prebuilt Installer"
-   - Node and NPM are installed together
-- Git - install [here](https://git-scm.com/downloads)
+2. **Build the application**:
+   - To build the application, run:
+     npm run build
 
-## Setup Instructions
 
-1. Clone this repo on to your computer. You can do so with the [desktop app](https://desktop.github.com/), or in a terminal with the following:
-```
-git clone https://github.com/huang0h/c4c-challenge-fall-2024.git
-```
-2. In a terminal, run `npm install` **at the root of this project** to install the required packages
-3. Run `npm run dev` **at the root of this project** to start the app locally
-4. Visit `http://localhost:3000` to view the website
-    
-    4a. The backend will be available at `http://localhost:4000`
+3. **Start the Application**:
+   - To start the application in development mode, run:
+     npm start
+   - You should be able to open the application in your browswer at at `http://localhost:3000`.
+
+### High-Level Overview of the Application
+
+
+
+
+
+
+
+2. **State Management**:
+
+
+3. **Form Validation**:
+
+
+
+
+
+#### What would I have done differently if you had more time?
+- Add input validation into the form making sure that users are putting in correct email addresses and url addresses. 
+- Add more deisgn to the website as of right now this is a very basic user interface adn as someone interested in design there are plenty of ways to make this look better 
+- Possibly add a databse in order to have effective storage of data if this was to hold more partners 
+
+
