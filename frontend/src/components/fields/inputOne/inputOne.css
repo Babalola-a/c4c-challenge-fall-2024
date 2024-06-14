@@ -1,12 +1,13 @@
 
+/*container for the input field for vertical spacing*/
 .input-field {
     margin: 20px 0;
   }
-  
+/*styling fo rhte heading inside of the input field container*/
   .input-field h3 {
     margin-bottom: 10px;
   }
-  
+/* styling for th einput element inside of the input field container*/
   .input-field input {
     width: 100%;
     padding: 10px;

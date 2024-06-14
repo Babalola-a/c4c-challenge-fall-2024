@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import InputOne from './fields/inputOne/inputOne'; 
 
+//component that handles when a user inputs a new partner by pressing the submit button 
 const PartnerTile = ({ onSubmit }) => {
+  //variables to store the values that are inputted into each of the form components 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
@@ -9,6 +11,7 @@ const PartnerTile = ({ onSubmit }) => {
   const [pictureUrl, setPictureUrl] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
 
+  //useeffect hook used to validate if any of the fields change and calls validate form 
   useEffect(() => {
     validateForm();
   }, [name, email, description, pictureUrl]);
@@ -18,9 +21,11 @@ const PartnerTile = ({ onSubmit }) => {
     setIsFormValid(isValid);
   };
 
+  //handles form submission 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isFormValid) {
+      //if the form i svalid meaning that all fields are filled call onSubmit function
       const partnerData = {
         name,
         email,
@@ -28,7 +33,8 @@ const PartnerTile = ({ onSubmit }) => {
         isActive,
         pictureUrl,
       };
-      console.log("Submitting partner data:", partnerData); // Debug log
+      console.log("Submitting partner data:", partnerData); 
+      //resets form after submission 
       onSubmit(partnerData);
       setName('');
       setEmail('');
@@ -37,7 +43,7 @@ const PartnerTile = ({ onSubmit }) => {
       setPictureUrl('');
     }
   };
-
+//all fields of the fields of the form
   return (
     <div className="partner-info-container">
       <img className="partner-thumbnail" src='favicon.ico' alt="Partner Thumbnail" />

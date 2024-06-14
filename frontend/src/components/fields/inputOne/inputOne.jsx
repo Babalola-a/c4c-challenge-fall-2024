@@ -1,6 +1,6 @@
 import React from 'react';
 import './inputOne.css';
-
+//input component for all input boxes in future implementation
 const InputOne = ({ heading, placeholder, value, onChange }) => {
   return (
     <div className="input-field">

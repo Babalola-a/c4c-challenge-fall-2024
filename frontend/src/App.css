@@ -1,25 +1,6 @@
-/* 
-  ================
-  COMPONENT STYLES
-  ================
-*/
-
-/* MainDisplay */
-body {
-  background-color: purple;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
 
 
-#main-content {
-  width: 1000px;
-  padding: 20px 30px;
-  margin: auto;
-  background-color: white; /* Ensure the main content box is white */
-}
-
+/* container for the partner grid */
 #main-partners-grid {
   display: flex;
   justify-content: center;
@@ -27,15 +8,14 @@ body {
   flex-wrap: wrap;
   gap: 25px;
 }
-
+/* title styling */
 h1.title {
   text-align: center;
   font-size: 24pt;
   padding-bottom: 25px;
 }
 
-/* PartnerTile */
-
+/*partner information styling */
 .partner-info {
   width: 450px;
   height: 400px;
@@ -46,56 +26,46 @@ h1.title {
   border: 1px solid #3d3d3d;
   border-radius: 12px;
   padding: 25px;
-  background-color: white; /* Ensure the box remains white */
+  background-color: white; 
 }
-
+/* partner name styling */
 .partner-name {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 15px;
 }
-
+/* partner logo styling*/
 .partner-logo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 15px;
 }
-
+/* partner description styling */
 .partner-description {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-bottom: 15px;
 }
-
+/* input label styling*/
 .input-label {
   display: block;
   margin-bottom: 10px;
 }
-
+/*text input styling*/
 .text-input {
   margin-right: 10px;
 }
 
-.action-button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
 
+/*partner logo styling*/
 .partner-thumbnail {
   max-width: 330px;
   max-height: 150px;
 }
-
+/* Container for partner information form */
 .partner-info-container {
   width: 70%;
   justify-content: center;
@@ -104,20 +74,20 @@ h1.title {
   height: auto;
   padding: 1em;
   border-radius: 10px;
-  background-color: white; /* Ensure the box remains white */
+  background-color: white;
 }
-
+/* Header text styling */
 .header-text {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 1.2;
 }
-
+/* Checkbox field container styling */
 .checkbox-field {
   display: flex;
   align-items: center;
 }
-
+/* Checkbox label styling */
 .checkbox-field h3 {
   margin: 0;
   margin-right: 10px;

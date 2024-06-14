@@ -1,46 +1,53 @@
 import React, { useState, useEffect } from 'react';
-import PartnerTile from './PartnerTile'; // Ensure correct import
+import PartnerTile from './PartnerTile'; 
 
 function Dashboard() {
-  const [partners, setPartners] = useState([]);
-  const [editingIndex, setEditingIndex] = useState(null);
-  const [editingPartner, setEditingPartner] = useState(null);
+  const [partners, setPartners] = useState([]);//holds partner info 
+  const [editingIndex, setEditingIndex] = useState(null); //partner info being edited
+  const [editingPartner, setEditingPartner] = useState(null);//data of the partner edited
 
   // Load all partners on initial page load
   useEffect(() => {
+    //fetching the data from the backend using a get route
     fetch('http://localhost:4000', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then(data => {
+        //to avoid errors because the api is meant to return an array of partner info
         if (Array.isArray(data)) {
           setPartners(data);
         } else {
+          //for debugging
           console.error('Expected an array but received:', data);
           setPartners([]);
         }
       })
       .catch(err => console.error(err));
   }, []);
-
+//function to deal with adding a new partner 
   const handleAddPartner = (partnerData) => {
-    console.log("Adding partner:", partnerData); // Debug log
+    console.log("Adding partner:", partnerData); // Debugging
     setPartners((prevPartners) => [...prevPartners, partnerData]);
   };
-
+//function for deleting a partner 
   const handleDeletePartner = (index) => {
     setPartners((prevPartners) => prevPartners.filter((_, i) => i !== index));
   };
-
+//function for deleting a parnter 
   const handleEditPartner = (index) => {
     setEditingIndex(index);
     setEditingPartner(partners[index]);
   };
-
+//saving the edied parnter data 
+//creates a copy of the partners array 
   const handleSavePartner = (index) => {
     const updatedPartners = [...partners];
+    //updates the specific partner 
     updatedPartners[index] = editingPartner;
+    //updates state with t9he new array 
     setPartners(updatedPartners);
+    //resetting the editing states so that you can edit again 
     setEditingIndex(null);
     setEditingPartner(null);
   };
@@ -59,11 +66,11 @@ function Dashboard() {
         <PartnerTile onSubmit={handleAddPartner} />
         <div className="partners-list" style={{ marginTop: '20px' }}>
           {partners.length === 0 ? (
-            <div></div>
+            <div></div>//empty div if there are no partners 
           ) : (
             partners.map((partner, index) => (
               <div key={index} className="partner-info" style={{ border: partner.isActive ? '2px solid green' : '2px solid red', padding: '10px', marginBottom: '10px' }}>
-                {editingIndex === index ? (
+                {editingIndex === index ?  ( // is the partner being edited?
                   <div>
                     <input
                       type="text"
